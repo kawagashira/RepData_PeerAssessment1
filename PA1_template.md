@@ -183,8 +183,6 @@ The time series plot of 5-minute interval and steps taken all the weekdays and w
 
 ```r
 library(lattice)
-D.filter.mean <- tapply(D.filter$steps, list(D.filter$interval, D.filter$week), 
-    mean)
 D.aggr <- aggregate(steps ~ interval + week, D.filter, mean)
 head(D.aggr)
 ```
@@ -205,8 +203,4 @@ xyplot(steps ~ interval | week, data = D.aggr, type = "l", xlab = "5-minute inte
 ```
 
 ![plot of chunk weekdayplot](figure/weekdayplot.png) 
-
-```r
-# head(D.filter.mean)
-```
 
